@@ -1,0 +1,34 @@
+name: aerial_image_1999
+description: Aerial imagem of Belo Horizonte - Minas Gerais - Brazil - 1999 
+metadata_type: eo3
+
+license: CC-BY-4.0
+
+metadata:
+  product:
+    name: aerial_image_1999
+
+storage:
+    crs: EPSG:29193
+    tile_size:
+      x: 1251
+      y: 1501
+    resolution:
+      x: 0.399711
+      y: -0.399711
+
+measurements:
+  - name: band_1
+    dtype: "uint8"
+    units: "1"
+    nodata: 0
+
+  - name: band_2
+    dtype: "uint8"
+    units: "1"
+    nodata: 0
+
+  - name: band_3
+    dtype: "uint8"
+    units: "1"
+    nodata: 0
