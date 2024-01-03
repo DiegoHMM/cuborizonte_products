@@ -1,12 +1,12 @@
-name: aerial_image_2002
-description: Aerial imagem of Belo Horizonte - Minas Gerais - Brazil - 2002 
+name: aerial_image_1999
+description: Aerial imagem of Belo Horizonte - Minas Gerais - Brazil - 1999 
 metadata_type: eo3
 
 license: CC-BY-4.0
 
 metadata:
   product:
-    name: aerial_image_2002
+    name: aerial_image_1999
 
 storage:
     crs: EPSG:29193
