@@ -1,12 +1,12 @@
-name: bh_aerial_image_1999_modified
-description: Aerial image of Belo Horizonte - Minas Gerais - Brazil - 1999. Modified resolution version.
+name: bh_aerial_image_1999_lowres
+description: Aerial image of Belo Horizonte - Minas Gerais - Brazil - 1999. lowres resolution version.
 metadata_type: eo3
 
 license: CC-BY-4.0
 
 metadata:
   product:
-    name: bh_aerial_image_1999_modified
+    name: bh_aerial_image_1999_lowres
 
 storage:
     crs: EPSG:29193
