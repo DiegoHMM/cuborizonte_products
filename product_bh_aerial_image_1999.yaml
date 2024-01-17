@@ -18,14 +18,14 @@ measurements:
   - name: red
     dtype: "uint8"
     units: "1"
-    nodata: 0
+    nodata: -1
 
   - name: green
     dtype: "uint8"
     units: "1"
-    nodata: 0
+    nodata: -1
 
   - name: blue
     dtype: "uint8"
     units: "1"
-    nodata: 0
+    nodata: -1
