@@ -1,18 +1,12 @@
-name: bh_aerial_image_1999
-description: Aerial imagem of Belo Horizonte - Minas Gerais - Brazil - 1999 
+name: bh_ortophoto
+description: "Ortofoto da cidade de Belo Horizonte - MG, Brasil"
 metadata_type: eo3
 
 license: CC-BY-4.0
 
 metadata:
   product:
-    name: bh_aerial_image_1999
-
-storage:
-    crs: EPSG:29193
-    resolution:
-      x: 0.399711
-      y: -0.399711
+    name: bh_ortophoto
 
 measurements:
   - name: red
