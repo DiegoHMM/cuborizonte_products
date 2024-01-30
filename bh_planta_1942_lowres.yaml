@@ -1,0 +1,31 @@
+name: bh_plan_1942_lowres
+description: Plan of the city of Belo Horizonte, Brazil, 1942. Low resolution version.
+metadata_type: eo3
+
+license: CC-BY-4.0
+
+metadata:
+  product:
+    name: bh_plan_1942_lowres
+
+storage:
+    crs: EPSG:31983
+    resolution:
+      x: 0.11893
+      y: -0.11893
+
+measurements:
+  - name: red
+    dtype: "uint8"
+    units: "1"
+    nodata: 0
+
+  - name: green
+    dtype: "uint8"
+    units: "1"
+    nodata: 0
+
+  - name: blue
+    dtype: "uint8"
+    units: "1"
+    nodata: 0
