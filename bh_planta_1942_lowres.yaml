@@ -11,8 +11,8 @@ metadata:
 storage:
     crs: EPSG:31983
     resolution:
-      x: 0.11893
-      y: -0.11893
+      x: 1.69
+      y: -1.69
 
 measurements:
   - name: red
