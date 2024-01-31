@@ -1,4 +1,4 @@
-name: bh_ortophoto_2007_2015_lowres
+name: bh_ortophoto_2007_2015_lowreso
 description: Orthophoto of the city of Belo Horizonte, Brazil, 2007-2015. lowres resolution version.
 metadata_type: eo3
 
@@ -6,13 +6,13 @@ license: CC-BY-4.0
 
 metadata:
   product:
-    name: bh_ortophoto_2007_2015_lowres
+    name: bh_ortophoto_2007_2015_lowreso
 
 storage:
     crs: EPSG:31983
     resolution:
-      x: 0.14
-      y: -0.14
+      x: 200
+      y: -200
 
 measurements:
   - name: red
