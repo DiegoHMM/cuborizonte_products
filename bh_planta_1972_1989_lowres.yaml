@@ -14,7 +14,7 @@ storage:
       x: 0.169
       y: -0.169
 measurements:
-  - name: grayscale
+  - name: gray
     dtype: "uint8"
     units: "1"
     nodata: 0
