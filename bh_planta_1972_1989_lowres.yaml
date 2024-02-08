@@ -6,7 +6,7 @@ license: CC-BY-4.0
 
 metadata:
   product:
-    name: bh_plan_1972_1989_lowres
+    name: bh_planta_1972_1989_lowres
 
 storage:
     crs: EPSG:31983
