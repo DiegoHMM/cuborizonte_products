@@ -19,3 +19,5 @@ measurements:
     dtype: "uint8"
     units: "1"
     nodata: 0
+
+time_resolution: "summary"
