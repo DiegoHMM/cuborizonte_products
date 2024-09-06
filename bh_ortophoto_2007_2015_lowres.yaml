@@ -29,3 +29,8 @@ measurements:
     dtype: "uint8"
     units: "1"
     nodata: 0
+
+  - name: dsm
+    dtype: "uint8"
+    units: "1"
+    nodata: 0
