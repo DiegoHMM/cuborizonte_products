@@ -1,12 +1,12 @@
-name: bh_planta_1972_1989_lowres
-description: Plan of the city of Belo Horizonte, Brazil, 1972-1989. Low resolution version.
+name: bh_planta_1972_lowres
+description: Plan of the city of Belo Horizonte, Brazil, 1972. Low resolution version.
 metadata_type: eo3
 
 license: CC-BY-4.0
 
 metadata:
   product:
-    name: bh_planta_1972_1989_lowres
+    name: bh_planta_1972_lowres
 
 storage:
     crs: EPSG:31983
