@@ -1,12 +1,12 @@
-name: bh_class_layer_2007_2015
-description: Pixel classification of the city of Belo Horizonte, Brazil, 2007-2015.
+name: bh_class_layer_2007
+description: Pixel classification of the city of Belo Horizonte, Brazil, 2007.
 metadata_type: eo3
 
 license: CC-BY-4.0
 
 metadata:
   product:
-    name: bh_class_layer_2007_2015
+    name: bh_class_layer_2007
 
 storage:
     crs: EPSG:31983

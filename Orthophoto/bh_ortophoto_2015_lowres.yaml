@@ -1,0 +1,36 @@
+name: bh_ortophoto_2015_lowres
+description: Orthophoto of the city of Belo Horizonte, Brazil, 2015. lowres resolution version.
+metadata_type: eo3
+
+license: CC-BY-4.0
+
+metadata:
+  product:
+    name: bh_ortophoto_2015_lowres
+
+storage:
+    crs: EPSG:31983
+    resolution:
+      x: 2
+      y: -2
+
+measurements:
+  - name: red
+    dtype: "uint8"
+    units: "1"
+    nodata: 0
+
+  - name: green
+    dtype: "uint8"
+    units: "1"
+    nodata: 0
+
+  - name: blue
+    dtype: "uint8"
+    units: "1"
+    nodata: 0
+
+  - name: dsm
+    dtype: "uint8"
+    units: "1"
+    nodata: 0

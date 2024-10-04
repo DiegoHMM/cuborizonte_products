@@ -1,12 +1,12 @@
-name: bh_planta_1972_1989
-description: Plan of the city of Belo Horizonte, Brazil, 1972-1989.
+name: bh_planta_1989
+description: Plan of the city of Belo Horizonte, Brazil, 1989.
 metadata_type: eo3
 
 license: CC-BY-4.0
 
 metadata:
   product:
-    name: bh_planta_1972_1989
+    name: bh_planta_1989
 
 storage:
     crs: EPSG:31983
