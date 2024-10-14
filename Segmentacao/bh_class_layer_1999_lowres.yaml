@@ -1,18 +1,18 @@
-name: bh_class_layer_2007_lowres
-description: Pixel classification of the city of Belo Horizonte, Brazil, 2007. lowres resolution version.
+name: bh_class_layer_1999_lowres
+description: Pixel classification of the city of Belo Horizonte, Brazil, 1999. lowres resolution version.
 metadata_type: eo3
 
 license: CC-BY-4.0
 
 metadata:
   product:
-    name: bh_class_layer_2007_lowres
+    name: bh_class_layer_1999_lowres
 
 storage:
     crs: EPSG:31983
     resolution:
-      x: 2
-      y: 2
+      x: 3.99711
+      y: -3.99711
 
 measurements:
   - name: vegetation
