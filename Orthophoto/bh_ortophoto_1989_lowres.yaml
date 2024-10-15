@@ -1,0 +1,21 @@
+name: bh_ortophoto_1989_lowres
+description: Orthophoto of the city of Belo Horizonte, Brazil, 1989. lowres resolution version.
+metadata_type: eo3
+
+license: CC-BY-4.0
+
+metadata:
+  product:
+    name: bh_ortophoto_1989_lowres
+
+storage:
+    crs: EPSG:29193
+    resolution:
+      x: 0.0001
+      y: -0.0001
+
+measurements:
+  - name: gray
+    dtype: "uint8"
+    units: "1"
+    nodata: 0
