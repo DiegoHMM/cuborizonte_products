@@ -5,12 +5,12 @@ license: CC-BY-4.0
 
 metadata:
   product:
-    name: bh_ortophoto_2015
+    name: bh_ortophoto
 measurements:
   - name: red
     dtype: uint8
     units: '1'
-    nodata: 0
+    nodata: 0 
 
   - name: green
     dtype: uint8
