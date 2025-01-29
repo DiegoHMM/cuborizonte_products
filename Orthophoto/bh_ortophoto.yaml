@@ -1,28 +1,28 @@
 name: bh_ortophoto
-description: Ortofotos da cidade de Belo Horizonte em múltiplos anos
+description: "Ortofotos da cidade de Belo Horizonte em múltiplos anos"
 metadata_type: eo3
 license: CC-BY-4.0
-
 metadata:
   product:
     name: bh_ortophoto
 measurements:
-  - name: red
+  red:
     dtype: uint8
-    units: '1'
-    nodata: 0 
-
-  - name: green
-    dtype: uint8
-    units: '1'
     nodata: 0
-
-  - name: blue
+    units: "1"
+    range: [0, 255]
+  green:
     dtype: uint8
-    units: '1'
     nodata: 0
-
-  - name: gray
+    units: "1"
+    range: [0, 255]
+  blue:
     dtype: uint8
-    units: '1'
     nodata: 0
+    units: "1"
+    range: [0, 255]
+  gray:
+    dtype: uint8
+    nodata: 0
+    units: "1"
+    range: [0, 255]
