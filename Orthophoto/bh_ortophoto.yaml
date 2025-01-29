@@ -10,19 +10,15 @@ measurements:
     dtype: uint8
     nodata: 0
     units: "1"
-    range: [0, 255]
   green:
     dtype: uint8
     nodata: 0
     units: "1"
-    range: [0, 255]
   blue:
     dtype: uint8
     nodata: 0
     units: "1"
-    range: [0, 255]
   gray:
     dtype: uint8
     nodata: 0
     units: "1"
-    range: [0, 255]
