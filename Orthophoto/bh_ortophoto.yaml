@@ -23,3 +23,8 @@ measurements:
     dtype: "uint8"
     units: "1"
     nodata: 0
+
+  - name: gray
+    dtype: "uint8"
+    units: "1"
+    nodata: 0
