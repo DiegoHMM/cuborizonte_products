@@ -1,12 +1,12 @@
-name: bh_ortophoto
-description: Orthophoto of the city of Belo Horizonte, Brazil.
+name: bh_planta
+description: Plan of the city of Belo Horizonte, Brazil.
 metadata_type: eo3
 
 license: CC-BY-4.0
 
 metadata:
   product:
-    name: bh_ortophoto
+    name: bh_planta
 
 storage:
     crs: EPSG:31983
