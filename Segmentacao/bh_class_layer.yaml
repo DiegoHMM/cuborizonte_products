@@ -1,0 +1,31 @@
+name: bh_class_layer
+description: Pixel classification of the city of Belo Horizonte, Brazil.
+metadata_type: eo3
+
+license: CC-BY-4.0
+
+metadata:
+  product:
+    name: bh_class_layer
+
+storage:
+    crs: EPSG:31983
+    resolution:
+      x: 0.2
+      y: -0.2
+
+measurements:
+  - name: vegetation
+    dtype: "uint8"
+    units: "1"
+    nodata: 254
+
+  - name: building
+    dtype: "uint8"
+    units: "1"
+    nodata: 254
+
+  - name: background
+    dtype: "uint8"
+    units: "1"
+    nodata: 254
