@@ -1,27 +1,7 @@
 name: bh_lidar_rasterized
 description: >
-  Produto raster derivado de dados LiDAR aéreo para a região de Belo Horizonte,
-  contendo três camadas de informação: vegetação, edificações e fundo. Processado através
-  de um pipeline avançado que inclui:
-  
-  1. Pré-processamento:
-     - Filtragem inicial por classificação (0-18) usando PDAL
-     - Remoção de outliers estatísticos (pontos com z-score > 3)
-     - Normalização das intensidades
-  
-  2. Interpolação adaptativa:
-     - Para datasets grandes (>100.000 pontos): Processamento por blocos de 500x500 pixels
-       com interpolação linear local.
-     - Para datasets menores: Interpolação baseada em KDTree com busca por 10 vizinhos
-       mais próximos e distância máxima de 2.0 unidades
-  
-  3. Pós-processamento:
-     - Preenchimento de áreas vazias usando difusão anisotrópica iterativa (máx. 5 iterações)
-     - Filtragem mediana (kernel 3x3) aplicada seletivamente em áreas interpoladas
-     - Classificação final atribuída por método do vizinho mais próximo
-
+  Produto raster derivado de dados LiDAR aéreo para a região de Belo Horizonte...
 metadata_type: eo3
-
 license: CC-BY-4.0
 
 metadata:
@@ -29,45 +9,48 @@ metadata:
     name: bh_lidar_rasterized
 
 storage:
-    crs: EPSG:31983
-    resolution:
-      x: 1
-      y: -1
+  crs: EPSG:31983
+  resolution:
+    x: 1
+    y: -1
 
 measurements:
   - name: elevation
     dtype: float32
-    units: "1"
+    units: "meters"
     nodata: 0
 
   - name: intensity
     dtype: float32
-    units: "1"
+    units: "DN"
     nodata: 0
 
   - name: classification
     dtype: uint8
+    units: "class"
     nodata: 0
     flags_definition:
-    classes:
-      0: "Created, never classified"
-      1: "Unclassified"
-      2: "Ground"
-      3: "Low Vegetation"
-      4: "Medium Vegetation"
-      5: "High Vegetation"
-      6: "Building"
-      7: "Low Point (Noise)"
-      8: "Model Key Point (Mass Point)"
-      9: "Water"
-      10: "Reserved for ASPRS Definition"
-      11: "Reserved for ASPRS Definition"
-      12: "Overlap Points"
-      13: "Reserved for ASPRS Definition"
-      14: "Reserved for ASPRS Definition"
-      15: "Reserved for ASPRS Definition"
-      16: "Wire"
-      17: "Reserved for ASPRS Definition"
-      18: "Reserved for ASPRS Definition"
-      19: "Reserved for ASPRS Definition"
-      20: "Reserved for ASPRS Definition"
+      classes:
+        bits: [0,1,2,3,4,5]
+        values:
+          0: "Created, never classified"
+          1: "Unclassified"
+          2: "Ground"
+          3: "Low Vegetation"
+          4: "Medium Vegetation"
+          5: "High Vegetation"
+          6: "Building"
+          7: "Low Point (Noise)"
+          8: "Model Key Point (Mass Point)"
+          9: "Water"
+          10: "Reserved for ASPRS Definition"
+          11: "Reserved for ASPRS Definition"
+          12: "Overlap Points"
+          13: "Reserved for ASPRS Definition"
+          14: "Reserved for ASPRS Definition"
+          15: "Reserved for ASPRS Definition"
+          16: "Wire"
+          17: "Reserved for ASPRS Definition"
+          18: "Reserved for ASPRS Definition"
+          19: "Reserved for ASPRS Definition"
+          20: "Reserved for ASPRS Definition"
