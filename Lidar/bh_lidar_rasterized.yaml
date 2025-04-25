@@ -1,11 +1,11 @@
 name: bh_lidar_rasterized
-description:  >
+description: >
   Produto raster derivado de dados LiDAR aéreo para a região de Belo Horizonte,
-  contendo três camadas de informação: vegetação, edificações e fundo. Processado através
-  de um pipeline avançado que inclui:
+  contendo camadas de elevação, intensidade e classificações binárias individuais.
+  Processado através de um pipeline avançado que inclui:
   
   1. Pré-processamento:
-     - Filtragem inicial por classificação (0-18) usando PDAL
+     - Filtragem inicial por classificação (0-20) usando PDAL
      - Remoção de outliers estatísticos (pontos com z-score > 3)
      - Normalização das intensidades
   
@@ -18,57 +18,113 @@ description:  >
   3. Pós-processamento:
      - Preenchimento de áreas vazias usando difusão anisotrópica iterativa (máx. 5 iterações)
      - Filtragem mediana (kernel 3x3) aplicada seletivamente em áreas interpoladas
-     - Classificação final atribuída por método do vizinho mais próximo
+     - Classificações binárias geradas por método do vizinho mais próximo
 metadata_type: eo3
 license: CC-BY-4.0
 
 metadata:
   product:
     name: bh_lidar_rasterized
+    layers_description: |
+      Banda 1: Elevação (metros)
+      Banda 2: Intensidade (DN)
+      Bandas 3-22: Classificações binárias (0=ausente, 1=presente)
 
 storage:
   crs: EPSG:31983
   resolution:
-    x: 1
-    y: -1
+    x: 0.8  # Atualizado para refletir a resolução do seu código
+    y: -0.8
 
 measurements:
   - name: elevation
     dtype: float32
     units: "meters"
-    nodata: 0
+    nodata: -9999  # Valor mais comum para dados de elevação
+    description: "Altura do terreno em metros relativos ao datum vertical"
 
   - name: intensity
     dtype: float32
     units: "DN"
     nodata: 0
+    description: "Intensidade do retorno LiDAR (valores normalizados)"
 
-  - name: classification
+# Definição das bandas de classificação
+class_bands:
+  - name: class_created_never_classified
     dtype: uint8
-    units: "class"
-    nodata: 0
-    flags_definition:
-      classes:
-        bits: [0,1,2,3,4,5]
-        values:
-          0: "Created, never classified"
-          1: "Unclassified"
-          2: "Ground"
-          3: "Low Vegetation"
-          4: "Medium Vegetation"
-          5: "High Vegetation"
-          6: "Building"
-          7: "Low Point (Noise)"
-          8: "Model Key Point (Mass Point)"
-          9: "Water"
-          10: "Reserved for ASPRS Definition"
-          11: "Reserved for ASPRS Definition"
-          12: "Overlap Points"
-          13: "Reserved for ASPRS Definition"
-          14: "Reserved for ASPRS Definition"
-          15: "Reserved for ASPRS Definition"
-          16: "Wire"
-          17: "Reserved for ASPRS Definition"
-          18: "Reserved for ASPRS Definition"
-          19: "Reserved for ASPRS Definition"
-          20: "Reserved for ASPRS Definition"
+    units: "binary"
+    nodata: 255
+    description: "Created, never classified (binário: 0=ausente, 1=presente)"
+
+  - name: class_unclassified
+    dtype: uint8
+    units: "binary"
+    nodata: 255
+    description: "Unclassified (binário: 0=ausente, 1=presente)"
+
+  - name: class_ground
+    dtype: uint8
+    units: "binary"
+    nodata: 255
+    description: "Ground (binário: 0=ausente, 1=presente)"
+
+  - name: class_low_vegetation
+    dtype: uint8
+    units: "binary"
+    nodata: 255
+    description: "Low Vegetation (binário: 0=ausente, 1=presente)"
+
+  - name: class_medium_vegetation
+    dtype: uint8
+    units: "binary"
+    nodata: 255
+    description: "Medium Vegetation (binário: 0=ausente, 1=presente)"
+
+  - name: class_high_vegetation
+    dtype: uint8
+    units: "binary"
+    nodata: 255
+    description: "High Vegetation (binário: 0=ausente, 1=presente)"
+
+  - name: class_building
+    dtype: uint8
+    units: "binary"
+    nodata: 255
+    description: "Building (binário: 0=ausente, 1=presente)"
+
+  - name: class_low_point_noise
+    dtype: uint8
+    units: "binary"
+    nodata: 255
+    description: "Low Point (Noise) (binário: 0=ausente, 1=presente)"
+
+  - name: class_model_key_point
+    dtype: uint8
+    units: "binary"
+    nodata: 255
+    description: "Model Key Point (Mass Point) (binário: 0=ausente, 1=presente)"
+
+  - name: class_water
+    dtype: uint8
+    units: "binary"
+    nodata: 255
+    description: "Water (binário: 0=ausente, 1=presente)"
+
+  - name: class_overlap_points
+    dtype: uint8
+    units: "binary"
+    nodata: 255
+    description: "Overlap Points (binário: 0=ausente, 1=presente)"
+
+  - name: class_reserved_asprs_13
+    dtype: uint8
+    units: "binary"
+    nodata: 255
+    description: "Reserved for ASPRS Definition (binário: 0=ausente, 1=presente)"
+
+  - name: class_wire
+    dtype: uint8
+    units: "binary"
+    nodata: 255
+    description: "Wire (binário: 0=ausente, 1=presente)"
