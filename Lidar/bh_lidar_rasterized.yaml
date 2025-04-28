@@ -49,81 +49,73 @@ measurements:
     nodata: 0
     description: "Intensidade do retorno LiDAR (valores normalizados)"
 
-# Definição das bandas de classificação
-class_bands:
-  - name: class_created_never_classified
+  - name: created_never_classified
     dtype: uint8
     units: "binary"
     nodata: 255
     description: "Created, never classified (binário: 0=ausente, 1=presente)"
 
-  - name: class_unclassified
+  - name: unclassified
     dtype: uint8
     units: "binary"
     nodata: 255
     description: "Unclassified (binário: 0=ausente, 1=presente)"
 
-  - name: class_ground
+  - name: ground
     dtype: uint8
     units: "binary"
     nodata: 255
     description: "Ground (binário: 0=ausente, 1=presente)"
 
-  - name: class_low_vegetation
+  - name: low_vegetation
     dtype: uint8
     units: "binary"
     nodata: 255
     description: "Low Vegetation (binário: 0=ausente, 1=presente)"
 
-  - name: class_medium_vegetation
+  - name: medium_vegetation
     dtype: uint8
     units: "binary"
     nodata: 255
     description: "Medium Vegetation (binário: 0=ausente, 1=presente)"
 
-  - name: class_high_vegetation
+  - name: high_vegetation
     dtype: uint8
     units: "binary"
     nodata: 255
     description: "High Vegetation (binário: 0=ausente, 1=presente)"
 
-  - name: class_building
+  - name: building
     dtype: uint8
     units: "binary"
     nodata: 255
     description: "Building (binário: 0=ausente, 1=presente)"
 
-  - name: class_low_point_noise
+  - name: low_point_noise
     dtype: uint8
     units: "binary"
     nodata: 255
     description: "Low Point (Noise) (binário: 0=ausente, 1=presente)"
 
-  - name: class_model_key_point
+  - name: model_key_point_mass_point
     dtype: uint8
     units: "binary"
     nodata: 255
     description: "Model Key Point (Mass Point) (binário: 0=ausente, 1=presente)"
 
-  - name: class_water
+  - name: water
     dtype: uint8
     units: "binary"
     nodata: 255
     description: "Water (binário: 0=ausente, 1=presente)"
 
-  - name: class_overlap_points
+  - name: overlap_points
     dtype: uint8
     units: "binary"
     nodata: 255
     description: "Overlap Points (binário: 0=ausente, 1=presente)"
 
-  - name: class_reserved_asprs_13
-    dtype: uint8
-    units: "binary"
-    nodata: 255
-    description: "Reserved for ASPRS Definition (binário: 0=ausente, 1=presente)"
-
-  - name: class_wire
+  - name: wire
     dtype: uint8
     units: "binary"
     nodata: 255
