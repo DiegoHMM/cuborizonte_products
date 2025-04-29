@@ -1,7 +1,7 @@
 name: bh_lidar_rasterized
 description: >
   Produto raster derivado de dados LiDAR aéreo para a região de Belo Horizonte,
-  contendo camadas de elevação, intensidade e classificações binárias individuais.
+  contendo camadas de elevação, intensidade e classificação consolidada.
   Processado através de um pipeline avançado que inclui:
   
   1. Pré-processamento:
@@ -18,7 +18,8 @@ description: >
   3. Pós-processamento:
      - Preenchimento de áreas vazias usando difusão anisotrópica iterativa (máx. 5 iterações)
      - Filtragem mediana (kernel 3x3) aplicada seletivamente em áreas interpoladas
-     - Classificações binárias geradas por método do vizinho mais próximo
+     - Classificação consolidada em uma única banda com valores categóricos
+
 metadata_type: eo3
 license: CC-BY-4.0
 
@@ -28,19 +29,19 @@ metadata:
     layers_description: |
       Banda 1: Elevação (metros)
       Banda 2: Intensidade (DN)
-      Bandas 3-22: Classificações binárias (0=ausente, 1=presente)
+      Banda 3: Classificação consolidada (valores categóricos conforme dicionário de classes)
 
 storage:
   crs: EPSG:31983
   resolution:
-    x: 0.8  # Atualizado para refletir a resolução do seu código
+    x: 0.8
     y: -0.8
 
 measurements:
   - name: elevation
     dtype: float32
     units: "meters"
-    nodata: -9999  # Valor mais comum para dados de elevação
+    nodata: -9999
     description: "Altura do terreno em metros relativos ao datum vertical"
 
   - name: intensity
@@ -49,74 +50,24 @@ measurements:
     nodata: 0
     description: "Intensidade do retorno LiDAR (valores normalizados)"
 
-  - name: created_never_classified
+  - name: classification
     dtype: uint8
-    units: "binary"
+    units: "class"
     nodata: 255
-    description: "Created, never classified (binário: 0=ausente, 1=presente)"
-
-  - name: unclassified
-    dtype: uint8
-    units: "binary"
-    nodata: 255
-    description: "Unclassified (binário: 0=ausente, 1=presente)"
-
-  - name: ground
-    dtype: uint8
-    units: "binary"
-    nodata: 255
-    description: "Ground (binário: 0=ausente, 1=presente)"
-
-  - name: low_vegetation
-    dtype: uint8
-    units: "binary"
-    nodata: 255
-    description: "Low Vegetation (binário: 0=ausente, 1=presente)"
-
-  - name: medium_vegetation
-    dtype: uint8
-    units: "binary"
-    nodata: 255
-    description: "Medium Vegetation (binário: 0=ausente, 1=presente)"
-
-  - name: high_vegetation
-    dtype: uint8
-    units: "binary"
-    nodata: 255
-    description: "High Vegetation (binário: 0=ausente, 1=presente)"
-
-  - name: building
-    dtype: uint8
-    units: "binary"
-    nodata: 255
-    description: "Building (binário: 0=ausente, 1=presente)"
-
-  - name: low_point_noise
-    dtype: uint8
-    units: "binary"
-    nodata: 255
-    description: "Low Point (Noise) (binário: 0=ausente, 1=presente)"
-
-  - name: model_key_point_mass_point
-    dtype: uint8
-    units: "binary"
-    nodata: 255
-    description: "Model Key Point (Mass Point) (binário: 0=ausente, 1=presente)"
-
-  - name: water
-    dtype: uint8
-    units: "binary"
-    nodata: 255
-    description: "Water (binário: 0=ausente, 1=presente)"
-
-  - name: overlap_points
-    dtype: uint8
-    units: "binary"
-    nodata: 255
-    description: "Overlap Points (binário: 0=ausente, 1=presente)"
-
-  - name: wire
-    dtype: uint8
-    units: "binary"
-    nodata: 255
-    description: "Wire (binário: 0=ausente, 1=presente)"
+    description: "Classificação consolidada de pontos LiDAR"
+    flags_definition:
+      classes:
+        description: "Classificação ASPRS para dados LiDAR"
+        values:
+          0: "Created_never_classified"
+          1: "Unclassified"
+          2: "Ground"
+          3: "Low_Vegetation"
+          4: "Medium_Vegetation"
+          5: "High_Vegetation"
+          6: "Building"
+          7: "Low_Point_Noise"
+          8: "Model_Key_Point_Mass_Point"
+          9: "Water"
+          12: "Overlap_Points"
+          16: "Wire"
