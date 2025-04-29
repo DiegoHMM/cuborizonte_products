@@ -54,17 +54,18 @@ measurements:
     nodata: 255
     flags_definition:
       classes:
-        description: "Classificação ASPRS para dados LiDAR"
+        bits: [0,1,2,3,4,5,6,7,8,9,12,16]
+        description: Classificação ASPRS para dados LiDAR
         values:
-          0: "Created_never_classified"
-          1: "Unclassified"
-          2: "Ground"
-          3: "Low_Vegetation"
-          4: "Medium_Vegetation"
-          5: "High_Vegetation"
-          6: "Building"
-          7: "Low_Point_Noise"
-          8: "Model_Key_Point_Mass_Point"
-          9: "Water"
-          12: "Overlap_Points"
-          16: "Wire"
+          0: Created_never_classified
+          1: Unclassified
+          2: Ground
+          3: Low_Vegetation
+          4: Medium_Vegetation
+          5: High_Vegetation
+          6: Building
+          7: Low_Point_Noise
+          8: Model_Key_Point_Mass_Point
+          9: Water
+          12: Overlap_Points
+          16: Wire
