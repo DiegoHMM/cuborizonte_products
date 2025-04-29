@@ -42,19 +42,16 @@ measurements:
     dtype: float32
     units: "meters"
     nodata: -9999
-    description: "Altura do terreno em metros relativos ao datum vertical"
 
   - name: intensity
     dtype: float32
     units: "DN"
     nodata: 0
-    description: "Intensidade do retorno LiDAR (valores normalizados)"
 
   - name: classification
     dtype: uint8
     units: "class"
     nodata: 255
-    description: "Classificação consolidada de pontos LiDAR"
     flags_definition:
       classes:
         description: "Classificação ASPRS para dados LiDAR"
