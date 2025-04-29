@@ -26,10 +26,6 @@ license: CC-BY-4.0
 metadata:
   product:
     name: bh_lidar_rasterized
-    layers_description: |
-      Banda 1: Elevação (metros)
-      Banda 2: Intensidade (DN)
-      Banda 3: Classificação consolidada (valores categóricos conforme dicionário de classes)
 
 storage:
   crs: EPSG:31983
@@ -38,7 +34,7 @@ measurements:
   - name: elevation
     dtype: float32
     units: "meters"
-    nodata: -9999
+    nodata: 0
 
   - name: intensity
     dtype: float32
