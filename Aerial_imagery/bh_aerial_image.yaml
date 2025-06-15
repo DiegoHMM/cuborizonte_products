@@ -1,0 +1,28 @@
+name: bh_aerial_image
+description: Aerial images of the city of Belo Horizonte, Brazil.
+metadata_type: eo3
+
+license: CC-BY-4.0
+
+metadata:
+  product:
+    name: bh_aerial_image
+
+storage:
+    crs: EPSG:31983
+
+measurements:
+  - name: red
+    dtype: "uint8"
+    units: "1"
+    nodata: 0
+
+  - name: green
+    dtype: "uint8"
+    units: "1"
+    nodata: 0
+
+  - name: blue
+    dtype: "uint8"
+    units: "1"
+    nodata: 0
